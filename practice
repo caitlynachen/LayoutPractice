@@ -1,0 +1,37 @@
+# LayoutPractice
+package com.example.layoutpractive;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+
+public class MainActivity extends Activity {
+
+	
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		RelativeLayout layout = new RelativeLayout(this);
+		
+		RelativeLayout.LayoutParams buttonParam = 
+				new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+		buttonParam.topMargin = 100;
+		buttonParam.leftMargin = 100;
+		buttonParam.width = 200;
+		buttonParam.height = 200;
+		
+		
+		
+		Button b = new Button(this);
+		b.setText("Silly Button");
+		b.setLayoutParams(buttonParam);
+		layout.addView(b);
+
+				
+	}
+}
